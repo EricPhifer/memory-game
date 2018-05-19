@@ -1,18 +1,18 @@
 var status = 0;
 var time = 0
 
-function start() {
+$("#cards").one("click", function() {
 	status = 1;
 	timer();
-	//start timer upon first click
-	document.getElementById("").disabled = true;
-}
+	//starts timer upon first click
+	document.getElementById("stopwatch");
+});
 
-function stop() {
+$("#stopatend") (function() {
 	status = 0;
 	//stop timer upon game completion
-	document.getElementById("").disabled = false;
-}
+	document.getElementById("stopwatch");
+});
 
 function timer() {
 	if(status == 1) {
