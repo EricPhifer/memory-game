@@ -12,7 +12,8 @@ function shuffle(cards) {
 		this[x] = this[i];
 		this[i] = temp;
 		}
-};		
+};	
+	
 function startingPoint() {
 	flipped = 0;
 	var output = '';

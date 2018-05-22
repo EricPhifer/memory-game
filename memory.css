@@ -31,22 +31,22 @@ body {
 	margin-right: 250px;
 }
 
-.timer {
+#timer {
 	float: left;
 	text-align: left;
 	margin-left: 325px;
 }
 
-.stopwatch {
+#stopwatch {
 	color: #ffffff;
 }
 
-.move-counter {
+#move-counter {
 	text-align: center;
 	margin: 0 auto;
 }
 
-.moves {
+#moves {
 	color: #ffffff;
 	margin-right: 275px;
 }
