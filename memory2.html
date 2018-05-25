@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!--Importing CSS, jQuery and Ubuntu font-->
+        <link rel="stylesheet" type="text/css" href="memory2.css">
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" async="async"></script>
+        <!--Importing Bootstrap CSS-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>Memory Game</title>
+
+    </head>
+<body>
+
+    <h1>The Memory Game</h1>
+
+    <div id="game-properties">
+        <ul id="star-ranking">
+            <!--image for stars taken from: http://download.dreamstime.com/dreamstime_82265342.jpg?imageid=82265342&authcode=fb26e9ba59498b9f4ac2f01bc8da3119&size=0-->
+            <li class="stars" id="stars1" src="images/gold-star.jpg" width="20" height="20"></li>
+            <li class="stars" id="stars2" src="images/gold-star.jpg" width="20" height="20"></li>
+            <li class="stars" id="stars3" src="images/gold-star.jpg" width="20" height="20"></li>
+        </ul>
+        
+            <span id="moves">00</span>
+
+            <div id="timer"></div>
+
+            <div id="reset" onclick=restart()>
+                <button id="reset-btn">Reset</button>
+            </div>
+    </div>
+
+<div id="container">    
+    <div class="allCards" id="gameBoard">
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+        <div class="cards"> </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div id="modal-content">
+            <h3>Nicely Executed!</h3>
+            <a id="close" href="#">&otimes;</a>
+            <p>Nice! You know your verses. Here's how you did...</p>
+            <div>
+                <p>You moved <span id=moveTotal></span> times.</p>
+                <p>and took <span id=timeElapsed></span></p>
+                <p><span id=starRanking></span></p>
+            </div>
+            <button id="play-again" onclick="restart()">
+                <p>Want to play again?</p>
+            </button>
+        </div>
+    </div>
+</div>    
+    <script src="memory.js" type="text/javascript"></script>
+</body>
+</html>
