@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <!--Importing CSS, jQuery and Ubuntu font-->
+        <!--Importing CSS, jQuery and Sofia font-->
         <link rel="stylesheet" type="text/css" href="memory2.css">
-        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+        <link href="https://fonts.googleapis.com/css?family=Sofia" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" async="async"></script>
         <!--Importing Bootstrap CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -19,39 +19,87 @@
     <div id="game-properties">
         <ul id="star-ranking">
             <!--image for stars taken from: http://download.dreamstime.com/dreamstime_82265342.jpg?imageid=82265342&authcode=fb26e9ba59498b9f4ac2f01bc8da3119&size=0-->
-            <li class="stars" id="stars1" src="images/gold-star.jpg" width="20" height="20"></li>
-            <li class="stars" id="stars2" src="images/gold-star.jpg" width="20" height="20"></li>
-            <li class="stars" id="stars3" src="images/gold-star.jpg" width="20" height="20"></li>
+            <li class="stars" id="stars1" src="images/gold-star.jpg"></li>
+            <li class="stars" id="stars2" src="images/gold-star.jpg"></li>
+            <li class="stars" id="stars3" src="images/gold-star.jpg"></li>
         </ul>
         
-            <span id="moves">00</span>
+        <span id="moves">00</span>
 
-            <div id="timer"></div>
+        <div id="timer">00:00:00</div>
 
-            <div id="reset" onclick=restart()>
-                <button id="reset-btn">Reset</button>
-            </div>
+        <div id="reset" onclick=restart()>
+            <button id="reset-btn">Reset</button>
+        </div>
     </div>
 
 <div id="container">    
-    <div class="allCards" id="gameBoard">
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-        <div class="cards"> </div>
-    </div>
+    <ul class="allCards" id="gameBoard">
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">A</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">A</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">B</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">B</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">H</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">C</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">C</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">D</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">D</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">E</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">E</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">F</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">F</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">G</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">G</div>
+        </li>
+        <li class="card">
+            <div class="front"> </div>
+            <div class="back">H</div>
+        </li>
+    </ul>
 
     <div id="myModal" class="modal">
         <div id="modal-content">

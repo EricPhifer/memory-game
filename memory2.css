@@ -6,20 +6,24 @@ html, body {
 }
 
 body {
-	background-image: linear-gradient(to bottom right, white, orange 50%, white);
-	background-attachment: fixed;
+	background-image: linear-gradient(to bottom, #C12610 , white 50%, #C12610 );
+	background-attachment: scroll;
+	overflow: auto;
 	margin: 0 auto;
-	
 }
 
 h1 {
 	margin: 0 auto;
 	text-align: center;
 	text-decoration-color: #FF0000;
+	font-family: 'sofia', sans serif;
 }
 
 #container {
-	position: absolute;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	display: block;
 	left: 60px;
 }
 
@@ -42,57 +46,121 @@ h1 {
 }
 
 #timer {
-	
+	font-family: lucida console, courier new;
+	padding-left: 25px;
+	padding-right: 25px;
+	font-size: 18px;
 }
 
 #moves {
 	margin: 0 auto;
-}
-
-#reset {
-
+	font-family: lucida console, courier new;
+	font-weight: bolder;
+	font-size: 20px;
 }
 
 #reset-btn {
-
+	border-radius: 20px;
+	background-image: linear-gradient(to bottom right, #666666, #E6E6E6);
+	box-shadow: inset;
+	font-family: verdana, helvetica, sans serif;
+	font-style: cursive;
 }
+/*modifies the cards look*/
 
 #gameBoard {
 	justify-content: center;
 	align-items: center;
 	position: fixed;
 	width: 85%;
-	background: #777;
+	background: #800000;
 	padding: 1rem;
-	border-radius: 4px;
+	border-radius: 6px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	margin: 0 0 3em;
-	max-width: 700px;
+	max-width: 710px;
 }
 
-.cards {
+.allCards {
+	list-style-type: none;
+	padding: 0;
+}
+
+.allCards li div {
+	width: 100%;
+	padding: 50% 0;
+	text-align: center;
+	color: #fff;
+	font-size: 48px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.card {
+	margin: 3px;
+	position: relative;
+}
+
+.card .front {
+	background-image: -webkit-linear-gradient(bottom left, red, white 50%, red);
+	background-image: -o-linear-gradient(bottom left, red, white 50%, red);
+	background-image: linear-gradient(to top right, red, white 50%, red);
 	height: 150px;
 	width: 150px;
 	margin: 5px 5px;
-	background-image: linear-gradient(to top right, red, white 50%, red);
 	border-radius: 5px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	max-width: 100%;
-	max-height: 100%
+	max-height: 100%;
 }
 
-.cards:hover {
+.card .back {
+	background-image: -webkit-linear-gradient(bottom left, white, red 50%, white);
+	background-image: -o-linear-gradient(bottom left, white, red 50%, white);
+	background-image: linear-gradient(to top right, white, red 50%, white);
+	height: 150px;
+	width: 150px;
+	margin: 5px 5px;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.card:hover {
 	opacity: 7;
-	border: 2px solid #000000;
+	border: 1px solid #000000;
 }
 
+/*animates the cards*/
+
+.card div.back {
+	transform: rotateX(90deg);
+}
+
+.card div.front {
+	position: absolute;
+}
+
+.allCards li:hover div.front {
+	animation: spin 0.2s ease-in forwards;
+}
+
+.allCards li:hover div.back {
+	animation: spin 0.2s 0.2s ease-out forwards reverse;
+}
+
+
+
+/*stores the style modifications to popup*/
 
 #myModal {
-
+	
 }
 
 .modal {
@@ -109,4 +177,19 @@ h1 {
 
 #play-again {
 
+}
+
+/* Animations */
+
+@keyframes bounce {
+
+}
+
+@keyframes squeeze {
+
+}
+
+@keyframes spin{
+	0%{transform: rotateX(0deg);}
+	100%{transform: rotateX(90deg);}
 }
