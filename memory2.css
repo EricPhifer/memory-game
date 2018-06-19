@@ -39,6 +39,10 @@ h1 {
 	padding-right: 5px;
 }
 
+#lemon {
+	visibility: hidden;
+}
+
 #game-properties {
 	position: relative;
 	margin: 0 auto;
@@ -119,6 +123,39 @@ h1 {
 	font-weight: bold;
 	cursor: pointer;
 }
+
+.allCards .card.open .front{
+	transform: rotateX(0);
+	cursor: default;
+	animation: spin .5s;
+}
+
+.allCards .card.open .back{
+	transform: rotateX(0);
+	cursor: default;
+  	animation: spin .5s reverse;
+}
+
+.allCards .card.show {
+	border: solid #20FF08 1px;
+}
+
+.allCards .card.match {
+	cursor: default;
+	animation-name: ripple;
+	animation-duration: .5s;
+}
+
+.allCards .card.noMatch {
+	animation-name: buzz;
+	animation-duration: .5s;
+}
+
+.allCards .card.disabled {
+	pointer-events: none;
+	opacity: 0.7;
+}
+
 .card {
 	margin: 3px;
 	position: relative;
@@ -169,34 +206,36 @@ h1 {
 	position: absolute;
 }
 
-.allCards li:hover div.front {
-	animation: spin 0.2s ease-in forwards;
-}
-
-.allCards li:hover div.back {
-	animation: spin 0.2s 0.2s ease-out forwards reverse;
-}
-
 /*stores the style modifications to popup*/
 
-#myModal {
-	
-}
-
 .modal {
-
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	visibility: visible;
+	z-index: 7;
 }
 
 #modal-content {
-
+	margin: 0 auto;
+	background: #ffffff;
+	border-radius: 5px;
+	position: relative;
+	font-family: 'Sofia', sans serif !important, 
 }
 
 #close {
-
+	position: absolute;
+	font-weight: bolder;
 }
 
 #play-again {
-
+	display: block;
+	margin: 0 auto;
+	font-family: 'Sofia', sans serif !important;
+	border-radius: 5px;
 }
 
 /* Animations */
