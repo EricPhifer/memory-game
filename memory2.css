@@ -30,11 +30,12 @@ h1 {
 
 #star-ranking {
 	list-style-type: none;
+	-webkit-display: table;
 	display: table;
-	padding-right: 25px;
 }
 
-#star-ranking li {
+#star-ranking i {
+	-webkit-display: inline;
 	display: inline;
 	padding-right: 5px;
 }
@@ -53,23 +54,35 @@ h1 {
 	max-width: 250px;
 }
 
-#game-properties ul{
+#game-properties div{
 	margin: 0;
 	padding: 0;
 }
 
-#timer {
-	font-family: 'Sofia', sans serif !important;
-	padding-left: 25px;
-	padding-right: 25px;
-	font-size: 18px;
+#timer-container {
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	padding-bottom: 5px;
 }
 
-#moves {
+#timer {
+	font-family: 'Sofia', sans serif !important;
+	font-size: 18px;
+  	border: solid black 3px;
+ 	border-radius: 25px;
+ 	text-align: center;
+ 	justify-content: center;
+ 	align-content: center;
+	max-width: 250px;
+}
+
+.moves {
 	margin: 0 auto;
 	font-family: 'Sofia', sans serif !important;
 	font-weight: bolder;
 	font-size: 20px;
+  	padding-right: 25px;
 }
 
 #reset button{
@@ -84,6 +97,7 @@ h1 {
 	box-shadow: inset;
 	font-family: 'Song Myung', verdana, sans serif !important;
 	font-style: cursive;
+  
 }
 
 /*modifies the cards styling*/
@@ -104,7 +118,6 @@ h1 {
 	border-radius: 6px;
 	display: flex;
 	flex-wrap: wrap;
-	align-items: center;
 	margin: 0 0 3em;
 	max-width: 710px;
 }
@@ -114,7 +127,7 @@ h1 {
 	padding: 0;
 }
 
-.allCards li div {
+.allCards i i {
 	width: 100%;
 	padding: 50% 0;
 	text-align: center;
@@ -137,13 +150,13 @@ h1 {
 }
 
 .allCards .card.show {
-	border: solid #20FF08 1px;
 }
 
 .allCards .card.match {
 	cursor: default;
 	animation-name: ripple;
 	animation-duration: .5s;
+	border: solid #20FF08 1px;
 }
 
 .allCards .card.noMatch {
@@ -151,9 +164,9 @@ h1 {
 	animation-duration: .5s;
 }
 
-.allCards .card.disabled {
+.allCards .card.disable {
 	pointer-events: none;
-	opacity: 0.7;
+	opacity: 0.9;
 }
 
 .card {
@@ -163,9 +176,7 @@ h1 {
 
 .card .front {
 	background-image: -webkit-linear-gradient(bottom left, #373737, white 50%, #373737);
-	background-image: -o-linear-gradient(bottom left, #373737, white 50%, #373737);
-	background-image: linear-gradient(to top right, #373737, white 50%, #373737);
-	height: 150px;
+  height: 150px;
 	width: 150px;
 	margin: 5px 5px;
 	border-radius: 5px;
@@ -178,8 +189,6 @@ h1 {
 
 .card .back {
 	background-image: -webkit-linear-gradient(bottom left, white, #373737 50%, white);
-	background-image: -o-linear-gradient(bottom left, white, #373737 50%, white);
-	background-image: linear-gradient(to top right, white, #373737 50%, white);
 	height: 150px;
 	width: 150px;
 	margin: 5px 5px;
@@ -198,44 +207,12 @@ h1 {
 
 /*animates the cards*/
 
-.card div.back {
+.card i.back {
 	transform: rotateX(90deg);
 }
 
-.card div.front {
+.card i.front {
 	position: absolute;
-}
-
-/*stores the style modifications to popup*/
-
-.modal {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	visibility: visible;
-	z-index: 7;
-}
-
-#modal-content {
-	margin: 0 auto;
-	background: #ffffff;
-	border-radius: 5px;
-	position: relative;
-	font-family: 'Sofia', sans serif !important, 
-}
-
-#close {
-	position: absolute;
-	font-weight: bolder;
-}
-
-#play-again {
-	display: block;
-	margin: 0 auto;
-	font-family: 'Sofia', sans serif !important;
-	border-radius: 5px;
 }
 
 /* Animations */
@@ -294,7 +271,7 @@ h1 {
 
 }
 
-@keyframes spin{
+@keyframes spin {
 	0%{transform: rotateX(0deg);}
 	100%{transform: rotateX(90deg);}
 }

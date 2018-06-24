@@ -1,10 +1,10 @@
-<!doctype html>
+<!docid html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!--Importing CSS, jQuery and Sofia and Song Myung font-->
-        <link rel="stylesheet" type="text/css" href="memory2.css">
+        <link rel="stylesheet" id="text/css" href="memory2.css">
         <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
         <link href='https://fonts.googleapis.com/css?family=Song Myung' rel='stylesheet'>
         <script src="https://code.jquery.com/jquery-2.2.4.min.js" async="async"></script>
@@ -18,108 +18,91 @@
     <h1>THE MEMORY GAME</h1>
 
     <div id="game-properties">
-        <ul id="star-ranking">
-            <li class="stars" id="stars1" href="/detail/215675/gold-five-pointed-star"><img src="https://openclipart.org/download/215675/five_pointed_star.svg" / height="25" width="25"></li>
-            <li class="stars" id="stars2" href="/detail/215675/gold-five-pointed-star"><img src="https://openclipart.org/download/215675/five_pointed_star.svg" / height="25" width="25"></li>
-            <li class="stars" id="stars3" href="/detail/215675/gold-five-pointed-star"><img src="https://openclipart.org/download/215675/five_pointed_star.svg" / height="25" width="25"></li>
-            <li class="stars" id="lemon" href="/detail/217715/lemon"><img src="https://openclipart.org/download/217715/1430147864.svg" / height="25" width="25"></li>
-        </ul>
-        
-        <div id="moves">
-            <span>00</span>
+        <div id="star-ranking">
+            <i class="stars" id="stars1" href="/detail/215675/gold-five-pointed-star"><img src="https://openclipart.org/download/215675/five_pointed_star.svg" / height="25" width="25" alt="star"></i>
+            <i class="stars" id="stars2" href="/detail/215675/gold-five-pointed-star"><img src="https://openclipart.org/download/215675/five_pointed_star.svg" / height="25" width="25" alt="star"></i>
+            <i class="stars" id="stars3" href="/detail/215675/gold-five-pointed-star"><img src="https://openclipart.org/download/215675/five_pointed_star.svg" / height="25" width="25" alt="star"></i>
+            <i class="stars" id="lemon" href="/detail/217715/lemon"><img src="https://openclipart.org/download/217715/1430147864.svg" / height="25" width="25" alt="lemon"></i>
         </div>
-        
-        <div id="timer">00:00:00</div>
+                
+        <span class="moves">0</span>
 
-        <div id="reset" onclick=restart()>
+        <div id="reset" onclick= "beginGame()">
             <button id="reset-btn">Reset</button>
         </div>
     </div>
-
-<div id="container">    
-    <ul class="allCards" id="gameBoard">
-        <li class="card" type="water">
-            <div class="front"> </div>
-            <div class="back" href="/detail/249610/water-drop"><img src="https://openclipart.org/download/249610/waterDroplet2.svg" / height="50" width="50"></div>
-        </li>
-        <li class="card" type="water">
-            <div class="front"> </div>
-            <div class="back" href="/detail/249610/water-drop"><img src="https://openclipart.org/download/249610/waterDroplet2.svg" / height="50" width="50"></div>
-        </li>
-        <li class="card" type="fire">
-            <div class="front"> </div>
-            <div class="back" href="/detail/190240/fire"><img src="https://openclipart.org/download/190240/1390414959.svg" / height="75" width="75"></div>
-        </li>
-        <li class="card" type="fire">
-            <div class="front"> </div>
-            <div class="back" href="/detail/190240/fire"><img src="https://openclipart.org/download/190240/1390414959.svg" / height="75" width="75"></div>
-        </li>
-        <li class="card" type="gate">
-            <div class="front"> </div>
-            <div class="back" href="/detail/244275/iron-gate-silhouette-opened"><img src="https://openclipart.org/download/244275/Iron-Gate-Silhouette-Opened.svg" / height="125" width="125"></div>
-        </li>
-        <li class="card" type="bread">
-            <div class="front"> </div>
-            <div class="back" href="/detail/213638/bread---coloured"><img src="https://openclipart.org/download/213638/Brot.svg" / height="75" width="75"></div>
-        </li>
-        <li class="card" type="bread">
-            <div class="front"> </div>
-            <div class="back" href="/detail/213638/bread---coloured"><img src="https://openclipart.org/download/213638/Brot.svg" / height="75" width="75"></div>
-        </li>
-        <li class="card" type="wine">
-            <div class="front"> </div>
-            <div class="back" href="/detail/203227/grapes-growing-for-wine"><img src="https://openclipart.org/download/203227/uvas.svg" / height="100" width="100"></div>
-        </li>
-        <li class="card" type="wine">
-            <div class="front"> </div>
-            <div class="back" href="/detail/203227/grapes-growing-for-wine"><img src="https://openclipart.org/download/203227/uvas.svg" / height="100" width="100"></div>
-        </li>
-        <li class="card" type="castle">
-            <div class="front"> </div>
-            <div class="back" href="/detail/262281/castle-4"><img src="https://openclipart.org/download/262281/Castle4.svg" / height="100" width="100"></div>
-        </li>
-        <li class="card" type="castle">
-            <div class="front"> </div>
-            <div class="back" href="/detail/262281/castle-4"><img src="https://openclipart.org/download/262281/Castle4.svg" / height="100" width="100"></div>
-        </li>
-        <li class="card" type="light">
-            <div class="front"> </div>
-            <div class="back" href="/detail/244034/candle"><img src="https://openclipart.org/download/244034/1458075974.svg" / height="100" width="100"></div>
-        </li>
-        <li class="card" type="light">
-            <div class="front"> </div>
-            <div class="back" href="/detail/244034/candle"><img src="https://openclipart.org/download/244034/1458075974.svg" / height="100" width="100"></div>
-        </li>
-        <li class="card" type="sword">
-            <div class="front"> </div>
-            <div class="back" href="/detail/28445/two-edged-sword"><img src="https://openclipart.org/download/28445/D4v1d-two-edged-sword.svg" / height="100" width="100"></div>
-        </li>
-        <li class="card" type="sword">
-            <div class="front"> </div>
-            <div class="back" href="/detail/28445/two-edged-sword"><img src="https://openclipart.org/download/28445/D4v1d-two-edged-sword.svg" / height="100" width="100"></div>
-        </li>
-        <li class="card" type="gate">
-            <div class="front"> </div>
-            <div class="back" href="/detail/244275/iron-gate-silhouette-opened"><img src="https://openclipart.org/download/244275/Iron-Gate-Silhouette-Opened.svg" / height="125" width="125"></div>
-        </li>
-    </ul>
-
-    <div id="myModal" class="modal">
-        <div id="modal-content">
-            <h3>Nicely Executed!</h3>
-            <a id="close" href="#">&otimes;</a>
-            <p>Nice! Here's how you did...</p>
-            <div>
-                <p>You moved <span id=moveTotal></span> times.</p>
-                <p>and took <span id=timeElapsed></span></p>
-                <p><span id=starRanking></span></p>
-            </div>
-            <button id="playAgain" onclick="restart()">
-                <p>Want to play again?</p>
-            </button>
-        </div>
+    <div id="timer-container">
+        <div id="timer"></div>
     </div>
+<div id="container">    
+    <div class="allCards" id="gameBoard">
+        <i class="card" id="water">
+            <i class="front"> </i>
+            <i class="back" href="/detail/249610/water-drop"><img src="https://openclipart.org/download/249610/waterDroplet2.svg" / height="50" width="50" alt="Water drop"></i>
+        </i>
+        <i class="card" id="water">
+            <i class="front"> </i>
+            <i class="back" href="/detail/249610/water-drop"><img src="https://openclipart.org/download/249610/waterDroplet2.svg" / height="50" width="50" alt="Water drop"></i>
+        </i>
+        <i class="card" id="fire">
+            <i class="front"> </i>
+            <i class="back" href="/detail/190240/fire"><img src="https://openclipart.org/download/190240/1390414959.svg" / height="75" width="75" alt="Fire"></i>
+        </i>
+        <i class="card" id="fire">
+            <i class="front"> </i>
+            <i class="back" href="/detail/190240/fire"><img src="https://openclipart.org/download/190240/1390414959.svg" / height="75" width="75" alt="Fire"></i>
+        </i>
+        <i class="card" id="gate">
+            <i class="front"> </i>
+            <i class="back" href="/detail/244275/iron-gate-silhouette-opened"><img src="https://openclipart.org/download/244275/Iron-Gate-Silhouette-Opened.svg" / height="125" width="125" alt="Iron gate"></i>
+        </i>
+        <i class="card" id="bread">
+            <i class="front"> </i>
+            <i class="back" href="/detail/213638/bread---coloured"><img src="https://openclipart.org/download/213638/Brot.svg" / height="75" width="75" alt="Bread"></i>
+        </i>
+        <i class="card" id="bread">
+            <i class="front"> </i>
+            <i class="back" href="/detail/213638/bread---coloured"><img src="https://openclipart.org/download/213638/Brot.svg" / height="75" width="75" alt="Bread"></i>
+        </i>
+        <i class="card" id="wine">
+            <i class="front"> </i>
+            <i class="back" href="/detail/203227/grapes-growing-for-wine"><img src="https://openclipart.org/download/203227/uvas.svg" / height="100" width="100" alt="Grapes growing for wine"></i>
+        </i>
+        <i class="card" id="wine">
+            <i class="front"> </i>
+            <i class="back" href="/detail/203227/grapes-growing-for-wine"><img src="https://openclipart.org/download/203227/uvas.svg" / height="100" width="100" alt="Grapes growing for wine"></i>
+        </i>
+        <i class="card" id="castle">
+            <i class="front"> </i>
+            <i class="back" href="/detail/262281/castle-4"><img src="https://openclipart.org/download/262281/Castle4.svg" / height="100" width="100" alt="Castle"></i>
+        </i>
+        <i class="card" id="castle">
+            <i class="front"> </i>
+            <i class="back" href="/detail/262281/castle-4"><img src="https://openclipart.org/download/262281/Castle4.svg" / height="100" width="100" alt="Castle"></i>
+        </i>
+        <i class="card" id="light">
+            <i class="front"> </i>
+            <i class="back" href="/detail/244034/candle"><img src="https://openclipart.org/download/244034/1458075974.svg" / height="100" width="100" alt="Candle"></i>
+        </i>
+        <i class="card" id="light">
+            <i class="front"> </i>
+            <i class="back" href="/detail/244034/candle"><img src="https://openclipart.org/download/244034/1458075974.svg" / height="100" width="100" alt="Candle"></i>
+        </i>
+        <i class="card" id="sword">
+            <i class="front"> </i>
+            <i class="back" href="/detail/28445/two-edged-sword"><img src="https://openclipart.org/download/28445/D4v1d-two-edged-sword.svg" / height="100" width="100" alt="Two edged sword"></i>
+        </i>
+        <i class="card" id="sword">
+            <i class="front"> </i>
+            <i class="back" href="/detail/28445/two-edged-sword"><img src="https://openclipart.org/download/28445/D4v1d-two-edged-sword.svg" / height="100" width="100" alt="Two edged sword"></i>
+        </i>
+        <i class="card" id="gate">
+            <i class="front"> </i>
+            <i class="back" href="/detail/244275/iron-gate-silhouette-opened"><img src="https://openclipart.org/download/244275/Iron-Gate-Silhouette-Opened.svg" / height="125" width="125" alt="Iron gate"></i>
+        </i>
+    </div>
+
 </div>    
-    <script src="memory.js" type="text/javascript"></script>
+    <script src="memory.js" id="text/javascript"></script>
 </body>
 </html>
